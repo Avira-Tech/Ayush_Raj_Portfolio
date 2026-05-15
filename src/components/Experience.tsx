@@ -55,11 +55,11 @@ const experiences: ExperienceItem[] = [
     period: "Jun 2023 - Jul 2023",
     location: "Mumbai, India (Remote)",
     description: [
-      "Specialized in Motion Graphics for digital marketing and social media campaigns.",
+      "Specialized in Visual Design for digital marketing and social media campaigns.",
       "Animated complex visual elements to enhance viewer engagement and brand message.",
       "Produced high-quality video content for internship projects."
     ],
-    skills: ["Motion Graphics", "Animation", "After Effects"]
+    skills: ["Visual Design", "Animation", "After Effects"]
   },
   {
     company: "Dynamic Technosoft",

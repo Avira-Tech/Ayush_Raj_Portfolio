@@ -6,7 +6,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="section" style={{ padding: '120px 0' }}>
       <div className="container">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <div style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>Call Me</div>
-                <div style={{ fontWeight: 600 }}>+91 (Contact Info on LinkedIn)</div>
+                <div style={{ fontWeight: 600 }}>+91 85399 06485</div>
               </div>
             </div>
 

@@ -100,8 +100,8 @@ const Work: React.FC = () => {
           layout
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-            gap: '2.5rem'
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: '2rem'
           }}
         >
           <AnimatePresence mode='popLayout'>
