@@ -296,30 +296,6 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        style={{ 
-          position: 'absolute', 
-          bottom: '2rem', 
-          left: '50%', 
-          transform: 'translateX(-50%)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-          color: 'var(--text-dim)'
-        }}
-      >
-        <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Scroll</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          <ChevronDown size={20} />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };
