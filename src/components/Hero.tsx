@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
         alignItems: 'center', 
         position: 'relative', 
         overflow: 'hidden', 
-        paddingTop: '80px',
+        paddingTop: '120px',
         background: 'radial-gradient(circle at 50% -20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)'
       }}
     >
@@ -79,34 +79,6 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="glass"
-            style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.8rem', 
-              padding: '0.6rem 1.2rem', 
-              borderRadius: '100px', 
-              marginBottom: '2rem',
-              border: '1px solid var(--glass-border)',
-              background: 'rgba(255, 255, 255, 0.05)'
-            }}
-          >
-            <span style={{ 
-              width: '8px', 
-              height: '8px', 
-              background: '#10b981', 
-              borderRadius: '50%',
-              display: 'inline-block',
-              boxShadow: '0 0 10px #10b981'
-            }}></span>
-            <span style={{ color: 'white', fontWeight: 600, fontSize: '0.85rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-              Available for new projects
-            </span>
-          </motion.div>
           
           <h1 style={{ 
             fontSize: 'max(3.5rem, 5vw)', 
