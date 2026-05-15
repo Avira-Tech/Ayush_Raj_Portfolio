@@ -7,7 +7,7 @@ const About: React.FC = () => {
   const skills = [
     { name: "Graphic Design", icon: <Palette size={20} />, level: "Expert" },
     { name: "Product Design", icon: <Code size={20} />, level: "Advanced" },
-    { name: "Motion Graphics", icon: <Cpu size={20} />, level: "Advanced" },
+    { name: "UI/UX Design", icon: <Cpu size={20} />, level: "Advanced" },
     { name: "Unreal Engine", icon: <User size={20} />, level: "Intermediate" }
   ];
 
@@ -54,7 +54,7 @@ const About: React.FC = () => {
             <h2 style={{ fontSize: '3.5rem', margin: '1rem 0 2rem' }} className="text-gradient">Passion Driven Design</h2>
             
             <p style={{ fontSize: '1.1rem', color: 'var(--text-dim)', marginBottom: '1.5rem', lineHeight: 1.8 }}>
-              I am a versatile Designer with expertise spanning across **Graphic Design**, **Product Design**, and **Motion Graphics**. 
+              With **over 5 years of professional experience**, I am a versatile Designer with expertise spanning across **Graphic Design** and **Product Design**. 
               With a professional background at companies like **SkillEcted** and **Addnectar Solutions**, I've mastered the art of creating 
               both high-impact marketing visuals and intuitive digital product interfaces.
             </p>
@@ -75,6 +75,16 @@ const About: React.FC = () => {
                   </div>
                 </div>
               ))}
+            </div>
+            <div style={{ display: 'flex', gap: '3rem', marginTop: '2rem' }}>
+              <div>
+                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'white' }}>5+</div>
+                <div style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>Years Experience</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'white' }}>50+</div>
+                <div style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>Projects Completed</div>
+              </div>
             </div>
           </motion.div>
         </div>
