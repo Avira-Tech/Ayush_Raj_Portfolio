@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { ArrowRight, Palette, Zap, ChevronDown, Download } from 'lucide-react';
+import { ArrowRight, Palette, Zap, Download } from 'lucide-react';
 import resumeFile from '../assets/Ayush_Raj.pdf';
 
 const Hero: React.FC = () => {
