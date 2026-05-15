@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
+import profilePhoto from '../assets/Professional DP.png';
 
 const LinkedInIcon = ({ size = 20, className = "" }) => (
   <svg 
@@ -29,9 +30,25 @@ const Navbar: React.FC = () => {
       style={{ height: '80px', display: 'flex', alignItems: 'center' }}
     >
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-        <div style={{ fontSize: '1.5rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
-          AR<span className="text-gradient">.</span>
-        </div>
+        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', textDecoration: 'none' }}>
+          <div style={{ 
+            width: '40px', 
+            height: '40px', 
+            borderRadius: '50%', 
+            overflow: 'hidden', 
+            border: '2px solid var(--glass-border)',
+            boxShadow: '0 0 10px rgba(59, 130, 246, 0.3)'
+          }}>
+            <img 
+              src={profilePhoto} 
+              alt="Ayush Raj" 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+            />
+          </div>
+          <div style={{ fontSize: '1.2rem', fontWeight: 800, fontFamily: 'var(--font-heading)', color: 'white' }}>
+            Ayush<span className="text-gradient">.</span>
+          </div>
+        </a>
         
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
           <a href="#about" style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--text-dim)' }}>About</a>
