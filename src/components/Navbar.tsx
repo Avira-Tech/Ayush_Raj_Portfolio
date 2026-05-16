@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Mail } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Menu, X } from 'lucide-react';
 import profilePhoto from '../assets/Professional DP.png';
 
 const LinkedInIcon = ({ size = 20, className = "" }) => (
@@ -22,6 +22,14 @@ const LinkedInIcon = ({ size = 20, className = "" }) => (
 );
 
 const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Work', href: '#work' },
+  ];
+
   return (
     <motion.nav 
       initial={{ y: -100 }}
@@ -78,10 +86,16 @@ const Navbar: React.FC = () => {
           </div>
         </div>
         
-        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          <a href="#about" style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--text-dim)' }}>About</a>
-          <a href="#experience" style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--text-dim)' }}>Experience</a>
-          <a href="#work" style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--text-dim)' }}>Work</a>
+        <div className="nav-links" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          {navLinks.map((link) => (
+            <a 
+              key={link.name} 
+              href={link.href} 
+              style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--text-dim)' }}
+            >
+              {link.name}
+            </a>
+          ))}
           <a href="#contact">
             <motion.div
               animate={{ 
@@ -110,15 +124,91 @@ const Navbar: React.FC = () => {
           </a>
         </div>
 
-        <div style={{ display: 'flex', gap: '1rem' }}>
-          <a href="https://www.linkedin.com/in/ayush-raj-6160a4205/" target="_blank" rel="noopener noreferrer">
-            <LinkedInIcon size={20} className="text-dim" />
-          </a>
-          <a href="mailto:Rajayush.rxl@gmail.com">
-            <Mail size={20} className="text-dim" />
-          </a>
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <div className="nav-links" style={{ display: 'flex', gap: '1rem' }}>
+            <a href="https://www.linkedin.com/in/ayush-raj-6160a4205/" target="_blank" rel="noopener noreferrer">
+              <LinkedInIcon size={20} className="text-dim" />
+            </a>
+            <a href="mailto:Rajayush.rxl@gmail.com">
+              <Mail size={20} className="text-dim" />
+            </a>
+          </div>
+          
+          {/* Mobile Toggle */}
+          <button 
+            className="nav-mobile-toggle glass"
+            onClick={() => setIsOpen(!isOpen)}
+            style={{ 
+              display: 'none', 
+              padding: '0.5rem', 
+              borderRadius: '12px',
+              color: 'white',
+              background: 'rgba(255,255,255,0.05)'
+            }}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            style={{ 
+              position: 'absolute', 
+              top: '85px', 
+              left: 0, 
+              right: 0, 
+              background: 'rgba(10, 10, 12, 0.95)', 
+              backdropFilter: 'blur(20px)',
+              borderBottom: '1px solid rgba(255,255,255,0.1)',
+              padding: '2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.5rem',
+              zIndex: 49
+            }}
+          >
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href} 
+                onClick={() => setIsOpen(false)}
+                style={{ fontSize: '1.1rem', fontWeight: 600, color: 'white' }}
+              >
+                {link.name}
+              </a>
+            ))}
+            <a href="#contact" onClick={() => setIsOpen(false)}>
+              <div 
+                className="glass" 
+                style={{ 
+                  padding: '1rem', 
+                  borderRadius: '16px', 
+                  textAlign: 'center',
+                  background: 'var(--accent-gradient)',
+                  color: 'white',
+                  fontWeight: 700
+                }}
+              >
+                Hire Me
+              </div>
+            </a>
+            <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', marginTop: '1rem' }}>
+              <a href="https://www.linkedin.com/in/ayush-raj-6160a4205/" target="_blank" rel="noopener noreferrer">
+                <LinkedInIcon size={24} />
+              </a>
+              <a href="mailto:Rajayush.rxl@gmail.com">
+                <Mail size={24} />
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

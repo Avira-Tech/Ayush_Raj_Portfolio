@@ -155,98 +155,6 @@ button {
   transform: scale(1.1);
 }
 
-@media (max-width: 1024px) {
-  .container {
-    padding: 0 1.5rem;
-  }
-  
-  #hero-container {
-    grid-template-columns: 1fr !important;
-    text-align: center;
-    gap: 3rem !important;
-  }
-  
-  #hero-container div:first-child {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  h2 {
-    font-size: 2.8rem !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1.2rem;
-  }
-
-  h1 {
-    font-size: 2.8rem !important;
-  }
-
-  h2 {
-    font-size: 2.4rem !important;
-  }
-
-  .section {
-    padding: 80px 0 !important;
-  }
-
-  #about > .container {
-    flex-direction: column !important;
-    gap: 3rem !important;
-  }
-
-  #about img {
-    max-width: 300px !important;
-    margin: 0 auto;
-  }
-
-  .project-card {
-    aspect-ratio: 1/1 !important;
-  }
-
-  nav .container {
-    justify-content: center !important;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    height: auto !important;
-    padding: 1rem 0;
-  }
-
-  /* Hide nav links on very small screens to keep it clean or use a simpler layout */
-  nav a {
-    font-size: 0.8rem !important;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 2.4rem !important;
-  }
-
-  h2 {
-    font-size: 2rem !important;
-  }
-
-  .glass {
-    padding: 1.5rem !important;
-  }
-
-  #hero-container div:first-child p {
-    font-size: 1rem !important;
-  }
-
-  button {
-    width: 100% !important;
-  }
-}
-
 @keyframes shimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
@@ -265,6 +173,171 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 4s linear infinite;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  #hero-container {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 3rem !important;
+  }
+  
+  #hero-container div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+  }
+
+  #hero-container div:last-child {
+    order: 1;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 3.5rem !important;
+  }
+
+  h2 {
+    font-size: 2.8rem !important;
+  }
+
+  #about .container > div {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+
+  #about .container > div > div:first-child {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  #contact .container > div {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.2rem;
+  }
+
+  h1 {
+    font-size: 2.8rem !important;
+  }
+
+  h2 {
+    font-size: 2.4rem !important;
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .section {
+    padding: 60px 0 !important;
+  }
+
+  #about img {
+    max-width: 100% !important;
+  }
+
+  .project-card {
+    aspect-ratio: 16/11 !important;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .nav-mobile-toggle {
+    display: block !important;
+  }
+
+  footer .container {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2rem !important;
+  }
+
+  h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .glass {
+    padding: 1.2rem !important;
+  }
+
+  #hero-container div:first-child p {
+    font-size: 0.95rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  button {
+    width: 100% !important;
+  }
+
+  #hero-container div:first-child div:nth-child(3) a {
+    width: 100% !important;
+    flex: none !important;
+  }
+
+  #about .container > div > div:last-child > div:nth-child(4) {
+    grid-template-columns: 1fr !important;
+  }
+
+  #experience h3 {
+    font-size: 1.2rem !important;
+  }
+
+  #experience .glass {
+    padding: 1.5rem !important;
+  }
+
+  #experience .glass > div:first-child {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.5rem;
+  }
+
+  #experience .glass > div:first-child > div:last-child {
+    text-align: left !important;
+  }
+
+  #contact .container > div > form > div:first-child {
+    grid-template-columns: 1fr !important;
+  }
+  
+  #contact .container > div > form {
+    padding: 1.5rem !important;
+  }
+
+  footer .container > div:last-child {
+    gap: 1rem !important;
+  }
+
+  .modal-overlay {
+    padding: 1rem !important;
+  }
 }
 
 
